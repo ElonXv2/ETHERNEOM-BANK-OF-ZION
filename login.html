@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <!-- saved from url=(0041)http://zero.webappsecurity.com/login.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <title>Zero - Log in</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="shortcut icon" href="./downloaded_files/img/dollar-ico.png" type="image/png">
 
-
     <link type="text/css" rel="stylesheet" href="./downloaded_files/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="./downloaded_files/font-awesome.css">
     <link type="text/css" rel="stylesheet" href="./downloaded_files/main.css">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" xintegrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="./downloaded_files/jquery-1.8.2.min.js"></script>
     <script src="./downloaded_files/bootstrap.min.js"></script>
@@ -45,62 +46,62 @@
         <div class="container">
             <div class="top_offset">
 
+                <div class="row">
+                    <div class="offset3 span6">
+                        <div class="page-header">
+                                <h3>Log in to ZeroBank</h3>
+                        </div>
 
-<div class="row">
-    <div class="offset3 span6">
-        <div class="page-header">
-                <h3>Log in to ZeroBank</h3>
-        </div>
+                        <form id="login_form" action="" method="post" class="form-horizontal">
+                            <div class="alert alert-error" hidden>
+                                Login and/or password are wrong.
+                            </div>
+                            <div class="form-inputs">
+                                <div class="control-group">
+                                    <label class="control-label" for="user_login">Login</label>
+                                    <div class="controls">
+                                        <input type="text" id="user_login" name="user_login" tabindex="1" autocomplete="off">
+                                        <i id="credentials" class="icon-question-sign" style="padding-left: 5px" data-original-title=""></i>
+                                    </div>
+                                </div>
 
-        <form id="login_form" action="" method="post" class="form-horizontal">
-            <div class="alert alert-error" hidden>
-                Login and/or password are wrong.
-            </div>
-            <div class="form-inputs">
-                <div class="control-group">
-                    <label class="control-label" for="user_login">Login</label>
-                    <div class="controls">
-                        <input type="text" id="user_login" name="user_login" tabindex="1" autocomplete="off">
-                        <i id="credentials" class="icon-question-sign" style="padding-left: 5px" data-original-title=""></i>
+                                <div class="control-group">
+                                    <label class="control-label" for="user_password">Password</label>
+                                    <div class="controls">
+                                        <input type="password" id="user_password" name="user_password" tabindex="2" autocomplete="off">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" for="user_remember_me">Keep me signed in</label>
+                                    <div class="controls">
+                                        <input type="checkbox" id="user_remember_me" name="user_remember_me" tabindex="3">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <input id="form-actions-submit" type="" name="submit" value="Sign in" class="btn btn-primary" tabindex="4">
+                            </div>
+                        </form>
+
+                        <a href="../forgot-password.html" tabindex="5">Forgot your password ?</a>
+                        <br>
+                        <!-- Added link to the sign-up page -->
+                        <a href="signup.html" tabindex="6">Don't have an account? Sign Up here!</a>
                     </div>
                 </div>
 
-                <div class="control-group">
-                    <label class="control-label" for="user_password">Password</label>
-                    <div class="controls">
-                        <input type="password" id="user_password" name="user_password" tabindex="2" autocomplete="off">
-                    </div>
-                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $("#user_login").focus();
+                        $("#credentials").tooltip({'trigger':'hover', 'title': 'Login/Password - username/password', placement : 'right'});
 
-                <div class="control-group">
-                    <label class="control-label" for="user_remember_me">Keep me signed in</label>
-                    <div class="controls">
-                        <input type="checkbox" id="user_remember_me" name="user_remember_me" tabindex="3">
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-actions">
-                <input id="form-actions-submit" type="" name="submit" value="Sign in" class="btn btn-primary" tabindex="4">
-            </div>
-        </form>
-
-        <a href="../forgot-password.html" tabindex="5">Forgot your password ?</a>
-    </div>
-</div>
-
-<script type="text/javascript">
-    $(function () {
-        $("#user_login").focus();
-        $("#credentials").tooltip({'trigger':'hover', 'title': 'Login/Password - username/password', placement : 'right'});
-
-        $("#login_form").click(function(event) {
-            $(this).append('<input id="user_token" type="hidden" name="user_token" value="d9fe4ef5-c5e7-4d17-9a37-ea8d21c019a6"/>');
-        });
-    });
-</script>
-
-
+                        $("#login_form").click(function(event) {
+                            $(this).append('<input id="user_token" type="hidden" name="user_token" value="d9fe4ef5-c5e7-4d17-9a37-ea8d21c019a6"/>');
+                        });
+                    });
+                </script>
             </div>
         </div>
 
