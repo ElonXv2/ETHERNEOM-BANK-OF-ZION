@@ -15,6 +15,7 @@
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
             overflow-x: hidden;
+            position: relative; 
         }
         .container {
             text-align: center;
@@ -22,20 +23,30 @@
             width: 100%;
             max-width: 800px;
             box-sizing: border-box;
+            z-index: 1; 
+            position: relative; 
+            color: white; 
         }
         video {
-            width: 100%;
-            max-width: 100%;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
             height: auto;
-            margin-bottom: 20px;
-            display: block;
+            z-index: -1; 
+            overflow: hidden; 
+            /* object-fit: cover; This ensures the video covers the entire area without stretching,
+               cropping parts if the aspect ratio doesn't match the screen. */
         }
         p {
             font-size: 18px;
             margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
         }
         a {
-            color: #0066cc;
+            color: #add8e6; 
             text-decoration: none;
         }
         a:hover {
@@ -43,31 +54,22 @@
         }
         #countdown {
             font-weight: bold;
-            color: #333;
+            color: #fff; 
         }
-        @media (max-width: 600px) {
-            .container {
-                padding: 10px;
-            }
-            p {
-                font-size: 16px;
-            }
-            video {
-                max-height: 50vh;
-            }
-        }
+        /* No specific media query needed for 414x896px as the above handles it generally */
     </style>
 </head>
 <body>
     <div class="container">
-        <video autoplay muted playsinline>
-            <source src="bank.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
         <p>Redirecting in <span id="countdown">20</span> seconds...</p>
         <p>You are being redirected to the <a href="pages/bank/account-summary.html">Account Summary</a> page.</p>
         <p>If you are not redirected automatically, please click the link above.</p>
     </div>
+
+    <video autoplay muted loop playsinline>
+        <source src="bank.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <script>
         // Countdown timer
