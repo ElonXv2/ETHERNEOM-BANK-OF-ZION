@@ -28,17 +28,13 @@
             color: white; 
         }
         video {
-            position: fixed; 
+            position: fixed;
             top: 0;
             left: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1; 
-            overflow: hidden; 
-            /* object-fit: cover; This ensures the video covers the entire area without stretching,
-               cropping parts if the aspect ratio doesn't match the screen. */
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
         }
         p {
             font-size: 18px;
