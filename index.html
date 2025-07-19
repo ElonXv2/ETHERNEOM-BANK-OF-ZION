@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="20;url=account-summary.html">
     <title>Redirecting...</title>
     <style>
@@ -10,20 +11,28 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+            overflow-x: hidden;
         }
         .container {
             text-align: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
         }
         video {
-            max-width: 80%;
-            max-height: 80vh;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
             margin-bottom: 20px;
+            display: block;
         }
         p {
             font-size: 18px;
+            margin: 10px 0;
         }
         a {
             color: #0066cc;
@@ -36,11 +45,22 @@
             font-weight: bold;
             color: #333;
         }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            p {
+                font-size: 16px;
+            }
+            video {
+                max-height: 50vh;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <video autoplay muted>
+        <video autoplay muted playsinline>
             <source src="bank.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
